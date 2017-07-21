@@ -50,3 +50,20 @@ class CautiousPlayer < Player
 end
 
 ## TODO add your own Player subclasses here
+class UnluckyNumberPlayer
+  def roll_again?
+    super && @turn_score != 13
+  end
+end
+
+class BuryThemAllPlayer
+  def end_game
+    super && @score > 100
+  end
+end
+
+class BadHabitPlayer
+  def roll_again?
+    super && @turn_score < 10
+  end
+end
